@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pré-Orçamento | Faculdade</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background-particles"></div>
+  <header class="header">
+    <img src="assets/logo.png" alt="Valensoft Desenvolvimento" class="logo">
+    <h1 class="main-title">Faça seu pré - orçamento!</h1>
+  </header>
+  <main>
+    <form id="orcamentoForm" autocomplete="off">
+      <fieldset>
+        <legend>Dados do Cliente</legend>
+        <div class="form-group">
+          <label for="nome">Nome completo*</label>
+          <input type="text" id="nome" name="nome" required>
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail*</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="faculdade">Nome da Faculdade*</label>
+          <input type="text" id="faculdade" name="faculdade" required>
+        </div>
+        <div class="form-group">
+          <label for="tipoProjeto">Tipo de projeto*</label>
+          <select id="tipoProjeto" name="tipoProjeto" required>
+            <option value="">Selecione</option>
+            <option value="Site Institucional">Site Institucional</option>
+            <option value="Landing Page">Landing Page</option>
+            <option value="Sistema Web Faculdade">Sistema Web Faculdade</option>
+          </select>
+        </div>
+        <div class="form-group" id="faixa-preco-group" style="display:none">
+          <label>Faixa de preço sugerida:</label>
+          <div id="faixa-preco" class="faixa-preco"></div>
+        </div>
+        <!-- Removido campo de faixa de investimento -->
+        <!-- Removido campo de observações sobre o orçamento -->
+        <div class="form-group">
+          <label for="prazo">Prazo desejado para entrega*</label>
+          <input type="date" id="prazo" name="prazo" required>
+        </div>
+        <div class="form-group">
+          <label>Funcionalidades desejadas*</label>
+          <div class="checkbox-group" id="funcionalidades-group">
+            <label><input type="checkbox" name="funcionalidades" value="Área do Aluno"> Área do Aluno</label>
+            <label><input type="checkbox" name="funcionalidades" value="Área do Professor"> Área do Professor</label>
+            <label><input type="checkbox" name="funcionalidades" value="Financeiro"> Financeiro</label>
+            <label><input type="checkbox" name="funcionalidades" value="Biblioteca Virtual"> Biblioteca Virtual</label>
+            <label><input type="checkbox" name="funcionalidades" value="Chat/Mensageria"> Chat/WhatsApp</label>
+            <label><input type="checkbox" name="funcionalidades" value="Integração com Sistemas"> Integração com Sistemas</label>
+            <label><input type="checkbox" name="funcionalidades" value="Outros"> Outros</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="descricao">Informações adicionais</label>
+          <textarea id="descricao" name="descricao" rows="4"></textarea>
+        </div>
+        <button type="submit" id="btnEnviar">
+          <span class="btn-text">Enviar</span>
+          <span class="btn-loading"></span>
+        </button>
+      </fieldset>
+    </form>
+    <div id="agradecimento" class="hidden">
+      <h2>Obrigado pelo envio!</h2>
+      <p>Seu pré-orçamento foi recebido. O PDF será baixado automaticamente.</p>
+    </div>
+  </main>
+  <script src="libs/jspdf.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

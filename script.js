@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function () {
     doc.text(form.prazo ? form.prazo.value : '-', 50, 110);
     // Removido campo de orçamento/faixa de investimento
     doc.setTextColor(30, 180, 255);
-    doc.text(`Faixa de Preço Sugerida:`, 15, 130);
+    doc.text(`Faixa de Preço Estimado:`, 15, 130);
     doc.setTextColor(0,0,0);
     doc.text(tabelaPrecos[form.tipoProjeto.value] || '', 70, 130);
     if (explicacoesPrecos[form.tipoProjeto.value]) {
